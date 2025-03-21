@@ -1,0 +1,19 @@
+.about{
+    display: flex;
+    flex-direction: column;
+}
+
+.about h1{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 64px;
+}
+
+.about p{
+    font-family: fantasy;
+    text-justify: auto;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 32px;
+}
