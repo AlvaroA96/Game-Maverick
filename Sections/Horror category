@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Maverick : CONTACT</title>
+    <title>Game Maverick : CATEGORIES</title>
     <link rel="stylesheet" href="../Styles/Style.css">
-    <link rel="stylesheet" href="../Styles/Contact.css">
+    <link rel="stylesheet" href="../Styles/Category.css">
 </head>
 <body>
     <div class="content">
@@ -35,7 +35,7 @@
                 <a href="../Sections/Categories.html">
                     All
                 </a>
-                <a href="">
+                <a href="Horror category">
                     Horror
                 </a>
                 <a href="">
@@ -58,18 +58,18 @@
                 </a>
             </div>
             <div class="mid_right">
-                <div class="contact">
-                    <h1>
-                        Contact Information
-                    </h1>
-                    <p>
-                        Phone number : +56 9 86523875
-                        <h2>From monday to saturday <br>
-                        8:00 am to 9:00 pm</h2>
-                    </p>
-                    <p>
-                        E-Mail : game_maverick@gmail.com
-                    </p>
+                <div class="games">
+                    <h2>GAMES</h2>
+                    <div class="games_list">
+                        <div class="games_box">
+                            <a href="Cry of fear.html">
+                                <img src="../Images/cry of fear/main image.jpg" alt="icono de cuenta">
+                                <h3>
+                                    Cry of fear
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

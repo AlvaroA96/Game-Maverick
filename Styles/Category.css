@@ -1,0 +1,54 @@
+.games{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.games h2{
+    font-family: fantasy;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 48px;
+}
+
+.games_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.games_box{
+    display: flex;
+    flex-direction: column;
+}
+
+.games_box a{
+    text-decoration: none;
+}
+
+.games_box img{
+    margin-bottom: 0px;
+    padding: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 200px;
+    height: 160px;
+    background-color: #3068ff;
+}
+
+.games_box h3{
+    font-family: fantasy;
+    text-align: center;
+    text-justify: auto;
+    font-weight: lighter;
+    font-size: 24px;  
+    margin-top: -4px;
+    padding: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 200px;
+    max-width: 256px;
+    height: 64px;
+    max-height: 64px;
+    color: #ffffff;
+    background-color: #3068ff;
+}
