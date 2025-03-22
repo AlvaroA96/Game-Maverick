@@ -1,0 +1,21 @@
+.login{
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    width: 512px;
+}
+
+.login h1{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 96px;
+}
+
+.username{
+
+}
+
+.password{
+
+}

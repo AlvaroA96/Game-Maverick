@@ -1,45 +1,31 @@
-.main{
+.games{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-
-.main h1{
-    font-family: fantasy;
-    text-align: center;
-    font-weight: lighter;
-    font-size: 64px;
-}
-
-.main p{
-    font-family: fantasy;
-    text-align: center;
-    font-weight: lighter;
-    font-size: 32px;
-}
-
-.main h2{
+.games h2{
     font-family: fantasy;
     text-align: center;
     font-weight: lighter;
     font-size: 48px;
 }
 
-.recent_games{
+.games_list{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.game_box{
+.games_box{
     display: flex;
     flex-direction: column;
 }
 
-.game_box a{
+.games_box a{
     text-decoration: none;
 }
 
-.game_box img{
+.games_box img{
     margin-bottom: 0px;
     padding: 16px;
     margin-left: 16px;
@@ -49,7 +35,7 @@
     background-color: #3068ff;
 }
 
-.game_box h3{
+.games_box h3{
     font-family: fantasy;
     text-align: center;
     text-justify: auto;
@@ -66,4 +52,3 @@
     color: #ffffff;
     background-color: #3068ff;
 }
-

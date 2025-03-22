@@ -1,0 +1,66 @@
+.seccion_juego{
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 64px;
+}
+.seccion_juego h1{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: center;
+    justify-self: center;
+    font-size: 64px;
+}
+
+.seccion_juego button{
+    height: 64px;
+    margin-left: 64px;
+}
+
+.desc_price{
+    display: flex;
+    flex-direction: row;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.desc h2{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: left;
+    font-size: 64px;
+}
+
+.desc p{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: left;
+    justify-self: center;
+    font-size: 24px;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 128px;
+    margin-left: 128px;
+}
+
+.price h3{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: right;
+    font-size: 64px;
+}
+
+.price h4{
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: right;
+    font-size: 64px;
+}
