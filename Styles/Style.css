@@ -109,7 +109,6 @@ body{
 .mid_left a{
     font-family: fantasy;
     text-decoration: none;
-    align-self: flex-start;
     font-weight: lighter;
     height: 32px;
     font-size: 24px;
@@ -119,6 +118,7 @@ body{
 }
 
 .mid_right{
+    width: 100%;
     margin-top: 16px;
     box-shadow: -2px 2px 4px #2336bb, -2px -2px 4px #2336bb;
     color: #ffffff; 
@@ -136,9 +136,10 @@ body{
 }
 
 /*---------------------------------------*/
-/*             ADAPTATION                */
+/*             ADAPTACION                */
 /*---------------------------------------*/
-@media screen and (max-height: 100px){
+/* WIDE */
+@media screen and (max-height: 4000px){
     .top{
         flex-direction: row;
     }
@@ -149,20 +150,52 @@ body{
     .links_bar{
         flex-direction: row;
         justify-content: left;
-        justify-items: left;
+    }
+    .links_bar a{
+        align-self: auto;
+    }
+    .mid{
+        flex-direction: row;
+        justify-self: center;
+        height: 2000px;
+        width: 50%;
+    }
+    .mid_left{
+        width: 32%;
+    }
+    .mid_left a{
+        align-self: flex-start;
+    }
+}
+/* normal */
+@media screen and (max-height: 1500px){
+    .top{
+        flex-direction: row;
+    }
+    .titulo img{
+        height: 100%;
+        width: 100%;
+    }
+    .links_bar{
+        flex-direction: row;
+        justify-content: left;
+    }
+    .links_bar a{
+        align-self: auto;
     }
     .mid{
         flex-direction: row;
         height: 2000px;
+        width: 100%;
     }
     .mid_left{
         width: 16%;
     }
-    .mid_right{
-        margin-left: 16px;
-        width: 80%;
+    .mid_left a{
+        align-self: flex-start;
     }   
 }
+/* phone */
 @media screen and (max-height: 500px){
     .top{
         flex-direction: column;
@@ -174,17 +207,19 @@ body{
     .links_bar{
         flex-direction: column;
         justify-content: center;
-        justify-items: center;
+    }
+    .links_bar a{
+        align-self: center;
     }
     .mid{
         flex-direction: column;
-        height: 100%;
+        height: 2000px;
+        width: 100%;
     } 
     .mid_left{
         width: 100%;
     }
-    .mid_right{
-        margin-left: 0px;
-        width: 100%;
-    }     
+    .mid_left a{
+        align-self: center;
+    }       
 }

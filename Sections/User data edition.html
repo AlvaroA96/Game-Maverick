@@ -19,14 +19,15 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
-      $("#submit").click(function(){
+      $(document).ready(function () {
+        $("#submit").click(function () {
           const names = document.querySelector("#names");
           const last_names = document.querySelector("#last_names");
           const user_name = document.querySelector("#user_name");
           const mail = document.querySelector("#e_mail");
           const password = document.querySelector("#password");
           const confirm_password = document.querySelector("#confirm_password");
+          const old_password = document.querySelector("#old_password");
           const age = document.querySelector("#age");
           const terms = document.querySelector("#terms");
           const names_val = $("#names").val();
@@ -35,20 +36,37 @@
           const mail_val = $("#e_mail").val();
           const password_val = $("#password").val();
           const confirm_password_val = $("#confirm_password").val();
+          const old_password_val = $("#old_password").val();
           const age_val = $("#age").val();
           const terms_val = $("#terms").val();
           var correct_submit = true;
-          if(password_val.length < 8){
-              password.setCustomValidity("La contraseña debe tener un minimo de 8 caracteres");
-              password.reportValidity();
-              correct_submit = false
+          if (old_password_val.length < 8) {
+            old_password.setCustomValidity(
+              "La contraseña debe tener un minimo de 8 caracteres"
+            );
+            old_password.reportValidity();
+            correct_submit = false;
+          } else if (old_password_val.length > 20) {
+            old_password.setCustomValidity(
+              "La contraseña debe tener un maximo de 20 caracteres"
+            );
+            old_password.reportValidity();
+            correct_submit = false;
           }
-          else if(password_val.length > 20){
-              password.setCustomValidity("La contraseña debe tener un maximo de 20 caracteres");
-              password.reportValidity();
-              correct_submit = false
-          }
-          else if (!password_val.includes("1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9" || "0")) {
+
+          if (password_val.length < 8) {
+            password.setCustomValidity(
+              "La contraseña debe tener un minimo de 8 caracteres"
+            );
+            password.reportValidity();
+            correct_submit = false;
+          } else if (password_val.length > 20) {
+            password.setCustomValidity(
+              "La contraseña debe tener un maximo de 20 caracteres"
+            );
+            password.reportValidity();
+            correct_submit = false;
+          } else if (!password_val.includes("1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9" || "0")) {
             password.setCustomValidity("La contraseña debe tener almenos un numero");
             password.reportValidity();
             correct_submit = false;
@@ -56,65 +74,62 @@
             password.setCustomValidity("La contraseña debe tener almenos uno de estos simbolos !$%&");
             password.reportValidity();
             correct_submit = false;
-          }
-          else if(password_val != confirm_password_val){
+          } else if (password_val != confirm_password_val) {
             confirm_password.setCustomValidity("Las contraseñas no coinciden");
-              confirm_password.reportValidity();
-              correct_submit = false
-          };
+            confirm_password.reportValidity();
+            correct_submit = false;
+          }
 
-          if(mail_val < 1){
+          if (mail_val < 1) {
             mail.setCustomValidity("El campo no debe estar vacio");
             mail.reportValidity();
-            correct_submit = false 
-          }
-          else if(!mail_val.includes("@")){
+            correct_submit = false;
+          } else if (!mail_val.includes("@")) {
             mail.setCustomValidity("Formato no valido");
             mail.reportValidity();
-            correct_submit = false 
-          };
+            correct_submit = false;
+          }
 
-          if(user_name_val.length < 1){
+          if (user_name_val.length < 1) {
             user_name.setCustomValidity("El campo no debe estar vacio");
             user_name.reportValidity();
-            correct_submit = false   
-          }
-          else if(user_name_val.length < 6){
-            user_name.setCustomValidity("El nombre de usuario debe tener un minimo de 6 caracteres");
+            correct_submit = false;
+          } else if (user_name_val.length < 6) {
+            user_name.setCustomValidity(
+              "El nombre de usuario debe tener un minimo de 6 caracteres"
+            );
             user_name.reportValidity();
-            correct_submit = false  
-          }
-          else if(user_name_val.length > 20){
-            user_name.setCustomValidity("El nombre de usuario debe tener un maximo de 20 caracteres");
+            correct_submit = false;
+          } else if (user_name_val.length > 20) {
+            user_name.setCustomValidity(
+              "El nombre de usuario debe tener un maximo de 20 caracteres"
+            );
             user_name.reportValidity();
-            correct_submit = false  
-          };
-          if(last_names_val.length < 2){
+            correct_submit = false;
+          }
+          if (last_names_val.length < 2) {
             last_names.setCustomValidity("El campo esta vacio");
             last_names.reportValidity();
-            correct_submit = false
-          };
-          if(names_val.length < 2){
+            correct_submit = false;
+          }
+          if (names_val.length < 2) {
             names.setCustomValidity("El campo esta vacio");
             names.reportValidity();
-            correct_submit = false
-          };
+            correct_submit = false;
+          }
 
-
-          if(correct_submit)
+          if (correct_submit) {
+            console.log("CORRECTO");
+            event.preventDefault();
+            event.stopPropagation();
+          } else !correct_submit;
           {
-            console.log("CORRECTO")
+            console.log(age);
+            console.log("INCORRECTO");
             event.preventDefault();
             event.stopPropagation();
           }
-          else(!correct_submit)
-          {
-            console.log(age)
-            console.log("INCORRECTO")
-            event.preventDefault();
-            event.stopPropagation();
-          };
-      })
+        });
       });
     </script>
   </head>
@@ -134,7 +149,9 @@
             use <a href="Login.html">LOG IN</a> or
             <a href="Register.html">REGISTER</a> to join the page
           </p>
-          <a href="User data edition.html"><img src="../Images/Default user.png" alt="icono de cuenta" /></a>
+          <a href="User data edition.html"
+            ><img src="../Images/Default user.png" alt="icono de cuenta"
+          /></a>
         </div>
       </div>
       <div class="links_bar">
@@ -143,39 +160,22 @@
         <a href="Categories.html">CATEGORIES</a>
         <a href="About.html">ABOUT</a>
         <a href="Contact.html">CONTACT</a>
-
       </div>
       <div class="mid">
         <div class="mid_left">
           <h1>categories</h1>
-          <a href="../Sections/Categories.html">
-              All
-          </a>
-          <a href="Horror category.html">
-              Horror
-          </a>
-          <a href="Open world category.html">
-              Open world
-          </a>
-          <a href="Survival category.html">
-              Survival
-          </a>
-          <a href="Action category.html">
-              Action
-          </a>
-          <a href="Race category.html">
-              Race
-          </a>
-          <a href="Sports category.html">
-              Sports
-          </a>
-          <a href="Rpg category.html">
-              Rpg
-          </a>
+          <a href="../Sections/Categories.html"> All </a>
+          <a href="Horror category.html"> Horror </a>
+          <a href="Open world category.html"> Open world </a>
+          <a href="Survival category.html"> Survival </a>
+          <a href="Action category.html"> Action </a>
+          <a href="Race category.html"> Race </a>
+          <a href="Sports category.html"> Sports </a>
+          <a href="Rpg category.html"> Rpg </a>
         </div>
         <div class="mid_right">
           <div class="register">
-            <h1>REGISTER</h1>
+            <h1>Edit Info</h1>
             <form class="row g-3 needs-validation" novalidate>
               <div class="col-md-6 position-relative">
                 <label for="names" class="form-label">Names</label>
@@ -211,7 +211,7 @@
                 <div class="invalid-feedback">invalid e-mail</div>
               </div>
               <div class="col-md-6 position-relative">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">New Password</label>
                 <input
                   type="password"
                   class="form-control"
@@ -219,14 +219,14 @@
                   required
                 />
                 <div id="passwordHelpBlock" class="form-text">
-                  password must be 8-20 characters long and contain only letters
-                  and numbers
+                  password must be 8-20 characters long and contain letters
+                  ,numbers and any of these Symbols("!$%&")
                 </div>
                 <div class="invalid-feedback">required field</div>
               </div>
               <div class="col-md-6 position-relative">
                 <label for="confirm_password" class="form-label"
-                  >Confirm Password</label
+                  >Confirm new Password</label
                 >
                 <input
                   type="password"
@@ -239,7 +239,7 @@
                 </div>
                 <div class="invalid-feedback">required field</div>
               </div>
-              <h2>Dispatch address (optional)</h2>
+              <h2>Dispatch address</h2>
               <div class="col-md-4 position-relative">
                 <label for="city" class="form-label">City</label>
                 <input type="text" class="form-control" id="city" />
@@ -255,46 +255,17 @@
                 <input type="text" class="form-control" id="number" />
                 <div class="invalid-feedback">required field</div>
               </div>
-              <div class="col-12 position-relative">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="age"
-                    required
-                  />
-                  <label class="form-check-label" for="invalidCheck">
-                    I'm at least 18 years old
-                  </label>
-                  <div class="invalid-feedback">
-                    You must agree before submitting.
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 position-relative">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="terms"
-                    required
-                  />
-                  <label class="form-check-label" for="invalidCheck">
-                    Agree to terms and conditions
-                  </label>
-                  <div class="invalid-feedback">
-                    You must agree before submitting.
-                  </div>
-                </div>
-              </div>
-              <div>
-                <label for="user_name" class="form-label">User type</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option value="1">User</option>
-                  <option value="2">Administration</option>
-                </select>
+              <div class="col-md-6 position-relative">
+                <label for="old_password" class="form-label"
+                  >Confirm with old Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="old_password"
+                  required
+                />
+                <div class="invalid-feedback">required field</div>
               </div>
               <div class="col-12 position-relative">
                 <button class="btn btn-primary" type="submit" id="submit">
