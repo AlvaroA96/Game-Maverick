@@ -1,0 +1,16 @@
+.Item{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-right: 32px;
+    box-shadow: 2px 2px 4px #2336bb, 2px -2px 4px #2336bb;
+    background-color: #3068ff;
+}
+.Item h1{
+    text-align: center;
+    margin-top: 16px;
+    margin-left: 16px;
+    color: #ffffff;
+}
