@@ -1,0 +1,28 @@
+.mid_right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mid_right div{
+    margin-top: 128px;
+}
+
+.mid_right a{
+    font-family: fantasy;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    width: 512px;    
+    margin-left: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding: 16px;
+    margin-top: 32px;
+    box-shadow: 2px 2px 4px #2336bb, 2px -2px 4px #2336bb;
+    color: #ffffff;
+    background-color: #3068ff;
+}
